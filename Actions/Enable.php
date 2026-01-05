@@ -69,7 +69,6 @@ class Enable extends Action
 
         $typeData = $this->site->type_data ?? [];
         data_set($typeData, 'inertia_ssr', true);
-        data_set($typeData, 'inertia_ssr_port', $port);
         $this->site->type_data = $typeData;
         $this->site->save();
 
