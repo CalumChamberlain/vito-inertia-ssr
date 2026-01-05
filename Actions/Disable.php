@@ -2,7 +2,7 @@
 
 namespace App\Vito\Plugins\CalumChamberlain\VitoInertiaSsr\Actions;
 
-use App\Actions\Worker\ManageWorker;
+use App\Actions\Worker\DeleteWorker;
 use App\Models\Worker;
 use App\SiteFeatures\Action;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class Disable extends Action
         /** @var ?Worker $worker */
         $worker = $this->site->workers()->where('name', 'inertia-ssr')->first();
         if ($worker) {
-            app(ManageWorker::class)->delete($worker);
+            app(DeleteWorker::class)->delete($worker);
         }
 
         $typeData = $this->site->type_data ?? [];
